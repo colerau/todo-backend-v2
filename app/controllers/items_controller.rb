@@ -1,5 +1,11 @@
 class ItemsController < ApplicationController
 
+  def index 
+    count = Item.all.count
+    items = Item.all
+    render json: {items: items, count: count}
+  end
+
   def create
     item = Item.new(item_params)
     if item.save
