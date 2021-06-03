@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   def index 
     count = Item.all.count
     items = Item.all
-    render json: {items: items, count: count}
+    render json: items
   end
 
   def create
